@@ -1,0 +1,91 @@
+<%= form_for [@election, @candidate], :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :middle_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :middle_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :nick_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nick_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rank, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rank, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone_home, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone_home, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone_mobile, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone_mobile, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dob, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :dob, {:start_year => (Time.now.year - 18), :end_year => (Time.now.year - 10), :include_blank => true}, {:class => 'date_select'} %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bsa_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bsa_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email_scout, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email_scout, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email_parent, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email_parent, :class => 'text_field' %>
+    </div>
+  </div>
+
+
+  <% if current_user && @election.id %>
+  <div class="control-group">
+    <%= f.label :elected, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :elected, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ordeal_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :ordeal_date,{ :start_year => (Time.now.year - 1), :end_year => (Time.now.year + 1)}, {:class => 'date_select'} %>      
+    </div>
+  </div>
+  <% end %>
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                election_candidates_path(@election), :class => 'btn' %>
+  </div>
+<% end %>

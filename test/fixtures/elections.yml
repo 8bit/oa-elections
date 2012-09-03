@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  unit_type: MyString
+  unit_number: MyString
+  district: MyString
+  held_at: MyString
+  location: MyString
+  num_scouts_active: 1
+  num_scouts_present: 1
+  num_scouts_eligible: 1
+  ballot_one_count: 1
+  ballot_two_count: 1
+  no_candidates: false
+  election_refused: false
+  camp_promotion: false
+  camp_promotion_refused: false
+
+two:
+  unit_type: MyString
+  unit_number: MyString
+  district: MyString
+  held_at: MyString
+  location: MyString
+  num_scouts_active: 1
+  num_scouts_present: 1
+  num_scouts_eligible: 1
+  ballot_one_count: 1
+  ballot_two_count: 1
+  no_candidates: false
+  election_refused: false
+  camp_promotion: false
+  camp_promotion_refused: false

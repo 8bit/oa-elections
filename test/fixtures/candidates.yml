@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  election_id: 1
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  nick_name: MyString
+  rank: MyString
+  phone_home: MyString
+  phone_mobile: MyString
+  dob: 2012-09-01
+  bsa_id: MyString
+  email_scout: MyString
+  email_parent: MyString
+  elected: false
+  ordeal_date: 2012-09-01
+
+two:
+  election_id: 1
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  nick_name: MyString
+  rank: MyString
+  phone_home: MyString
+  phone_mobile: MyString
+  dob: 2012-09-01
+  bsa_id: MyString
+  email_scout: MyString
+  email_parent: MyString
+  elected: false
+  ordeal_date: 2012-09-01
