@@ -18,7 +18,7 @@ class DistrictsControllerTest < ActionController::TestCase
 
   test "should create district" do
     assert_difference('District.count') do
-      post :create, district: { abbv: @district.abbv, division: @district.division, name: @district.name }
+      post :create, district: { code: @district.code, division_id: @district.division_id, name: @district.name }
     end
 
     assert_redirected_to district_path(assigns(:district))
@@ -35,7 +35,7 @@ class DistrictsControllerTest < ActionController::TestCase
   end
 
   test "should update district" do
-    put :update, id: @district, district: { abbv: @district.abbv, division: @district.division, name: @district.name }
+    put :update, id: @district, district: { code: @district.code, division_id: @district.division_id, name: @district.name }
     assert_redirected_to district_path(assigns(:district))
   end
 

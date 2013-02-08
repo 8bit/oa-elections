@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Abbv</th>
+    <th>Code</th>
     <th>Division</th>
     <th></th>
     <th></th>
@@ -13,8 +13,8 @@
 <% @districts.each do |district| %>
   <tr>
     <td><%= district.name %></td>
-    <td><%= district.abbv %></td>
-    <td><%= district.division %></td>
+    <td><%= district.code %></td>
+    <td><%= district.division_id %></td>
     <td><%= link_to 'Show', district %></td>
     <td><%= link_to 'Edit', edit_district_path(district) %></td>
     <td><%= link_to 'Destroy', district, method: :delete, data: { confirm: 'Are you sure?' } %></td>

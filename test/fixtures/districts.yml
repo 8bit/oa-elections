@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  abbv: MyString
-  division: MyString
+  code: MyString
+  division_id: MyString
 
 two:
   name: MyString
-  abbv: MyString
-  division: MyString
+  code: MyString
+  division_id: MyString
