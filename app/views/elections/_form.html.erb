@@ -14,7 +14,7 @@
   <div class="control-group">
     <%= f.label :district_id, :class => 'control-label' %>
     <div class="controls">
-    <%=f.select :district_id, options_from_collection_for_select(District.order('name ASC'), 'id', 'name', @election.district_id), :include_blank => true, :class => 'text_field' %>
+    <%=f.select :district_id, options_from_collection_for_select(District.all.sort {|a,b| a.name <=> b.name}, 'id', 'name', @election.district_id), :include_blank => true, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
