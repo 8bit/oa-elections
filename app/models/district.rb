@@ -1,6 +1,19 @@
-class District < ActiveRecord::Base
-  attr_accessible :abbv, :division, :name
+class District < ActiveResource::Base
+  self.site = "http://kekeewin.dev/"
+
+  schema do
+    string "name", "code"
+    integer "division_id"
+  end
   
-  has_many :elections
-  has_many :users
+  def elections
+    Elections.where(district_id: self.id)
+  end
+
+  def users
+    Users.where(district_id: self.id)
+  end
+
+  #has_many :elections
+  #has_many :users
 end

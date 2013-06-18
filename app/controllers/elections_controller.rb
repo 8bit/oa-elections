@@ -3,6 +3,7 @@ class ElectionsController < ApplicationController
   # GET /elections.json
   def index
     @elections = Election.all
+    @unit = Unit.find(1)
 
     respond_to do |format|
       format.html # index.html.erb

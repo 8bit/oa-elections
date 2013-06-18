@@ -19,4 +19,7 @@ OAElections::Application.routes.draw do
   match 'request_election' => 'elections#new', as: 'request_election'
   
   root :to => 'elections#new'
+
+
+  resources :units
 end
