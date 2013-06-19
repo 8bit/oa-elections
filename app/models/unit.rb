@@ -1,5 +1,5 @@
 class Unit < ActiveResource::Base
-  self.site = "http://kekeewin.dev/"
+  self.site = "https://scouting.io/"
 
   schema do
     integer "program_id", "district_id", "number"
