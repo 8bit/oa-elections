@@ -1,5 +1,5 @@
 class District < ActiveResource::Base
-  self.site = "http://kekeewin.dev/"
+  self.site = "http://scouting.io/"
 
   schema do
     string "name", "code"
