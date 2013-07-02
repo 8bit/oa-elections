@@ -34,17 +34,18 @@
               <% end %>
               <li><%= link_to( @election.unit + " Candidates", election_candidates_path(@election)) if @election && @election.id  %></li>
             </ul>
+
             <ul class="nav pull-right">
               <% if current_user %>
               <li class="dropdown">
                 <a class="dropdown-toggle" href="#"><%= current_user.email %></a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                   <li><%= link_to 'Profile', current_user  %></li>
-                  <li><%= link_to 'Logout', logout_url  %></li>
+                  <li><%= link_to 'Logout', logout_path  %></li>
                 </ul>
               </li>
               <% else %>
-              <li><%= link_to "Login", login_path  %></li>
+              <li><%= link_to "Sign in with Scouting.io", "/auth/kekeewin" %></li>
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->

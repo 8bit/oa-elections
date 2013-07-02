@@ -3,10 +3,10 @@ OAElections::Application.routes.draw do
   resources :districts
 
   resources :users
-  resources :sessions
-  get 'register', to: 'users#new', as: 'register'
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+  
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'login', to: 'sessions#new', as: 'login'
+  match 'logout', to: 'sessions#destroy', as: 'logout'
   
   resources :elections do
     collection do

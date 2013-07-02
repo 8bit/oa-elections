@@ -1,0 +1,4 @@
+export KEKEEWIN_URL="http://kekeewin.dev"
+export CALLBACK_HOST="oa-election.dev"
+export OAUTH_ID="4b3beaa928159a8da949fe257f9a09d697ce2fb6f38921fdfe66370c5ed7e01a"
+export OAUTH_SECRET="04cd6c999ceda3acb2d28a882b081de6f120973726f1524644d949af7c644a7a"
