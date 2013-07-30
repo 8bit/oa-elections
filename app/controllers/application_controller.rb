@@ -29,6 +29,24 @@ private
     end
   end
   helper_method :current_user
+  
+  def current_memberships
+    begin
+      @memberships ||= session[:memberships] if session[:user_id]
+    rescue
+      session[:user_id] = nil
+    end
+  end
+  helper_method :current_memberships
+
+  def current_lodges
+    begin
+      @lodges ||= current_memberships.select { |membership| membership['group_type'] == 'Lodge' }.map { |membership| access_token.get("/api/lodges/#{membership['group_id']}").parsed } if current_memberships 
+    rescue
+      session[:user_id] = nil
+    end
+  end
+  helper_method :current_lodges
 
   def require_user
     unless current_user

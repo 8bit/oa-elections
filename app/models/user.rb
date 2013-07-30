@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   def admin?
     true
   end
+
+  def lodge_id
+    105
+  end
   
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)

@@ -1,7 +1,17 @@
 OAElections::Application.routes.draw do
 
-  resources :districts
-
+  resources :lodges do
+    member do
+      get :teams
+    end
+  end
+  resources :teams do
+    member do
+      get :elections
+      get :users
+      get :scheduled
+    end
+  end
   resources :users
   
   match 'auth/:provider/callback', to: 'sessions#create'

@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.from_omniauth(auth)
     session[:user_id] = user.id
     session[:access_token] = auth["credentials"]["token"]
+    Kekeewin.access_token = auth["credentials"]["token"]
+    session[:memberships] = auth['info']['memberships']
     redirect_to root_url
   end
 

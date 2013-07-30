@@ -13,7 +13,7 @@ module OmniAuth
       end
 
       info do
-        {email: raw_info["email"]}
+        {email: raw_info["email"], name: raw_info["name"], memberships: raw_info['memberships']}
       end
 
       def raw_info

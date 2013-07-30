@@ -1,6 +1,7 @@
 class Election < ActiveRecord::Base
   has_many :candidates
   belongs_to :district
+  belongs_to :team
   
   attr_accessible :ballot_one_count, :ballot_two_count, :camp_promotion, :camp_promotion_refused, :district_id, :election_refused, :held_at, :location, :no_candidates, :num_scouts_active, :num_scouts_eligible, :num_scouts_present, :unit_number, :unit_type, :coordinator_name, :coordinator_email, :coordinator_phone
   

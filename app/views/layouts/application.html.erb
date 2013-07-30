@@ -40,6 +40,11 @@
               <li class="dropdown">
                 <a class="dropdown-toggle" href="#"><%= current_user.email %></a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <% if current_lodges %>
+                    <% current_lodges.each do |membership| %>
+                      <li><%= link_to membership['name'], '#' %></li>
+                    <% end %>
+                  <% end %>
                   <li><%= link_to 'Profile', current_user  %></li>
                   <li><%= link_to 'Logout', logout_path  %></li>
                 </ul>
