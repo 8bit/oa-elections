@@ -1,0 +1,3 @@
+export KEKEEWIN_URL="http://kekeewin.dev"
+export OAUTH_ID="ccd5cf853a2b5ddbb523da179376ef65467b6affc7b68b7fab647211c002a337"
+export OAUTH_SECRET="ed2a8299d31fb35d3a4f07f46eb0f1e1460ee49e98621a5b9dccfa6b56157ce3"
