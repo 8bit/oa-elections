@@ -3,6 +3,7 @@ OAElections::Application.routes.draw do
   resources :lodges do
     member do
       get :teams
+      get :users
     end
   end
   resources :teams do

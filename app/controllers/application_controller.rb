@@ -39,6 +39,15 @@ private
   end
   helper_method :current_memberships
 
+  def current_lodge
+    begin
+      @lodge ||= current_memberships.select { |membership| membership['group_type'] == 'Lodge' }.map { |membership| access_token.get("/api/lodges/#{membership['group_id']}").parsed }.first if current_memberships 
+    rescue
+      session[:user_id] = nil
+    end
+  end
+  helper_method :current_lodge
+
   def current_lodges
     begin
       @lodges ||= current_memberships.select { |membership| membership['group_type'] == 'Lodge' }.map { |membership| access_token.get("/api/lodges/#{membership['group_id']}").parsed } if current_memberships 

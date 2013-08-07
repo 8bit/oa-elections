@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base  
   attr_accessible :email, :provider, :uid
 
+  belongs_to :team
+
   # before_create :generate_uuid
 
   # def to_param

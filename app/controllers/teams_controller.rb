@@ -11,10 +11,12 @@ class TeamsController < ApplicationController
   end
 
   def elections
+    @team = Team.find(params['id'])
     @elections = Election.where(team_id: params['id'])
   end
 
   def scheduled
+    @team = Team.find(params['id'])
     @elections = Election.where(team_id: params['id'])
     @elections_by_date = @elections.group_by(&:held_on)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
