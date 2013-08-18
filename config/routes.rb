@@ -27,7 +27,7 @@ OAElections::Application.routes.draw do
   end
   
   match '/token/:token' => 'sessions#token', as: 'token'
-  match 'request_election' => 'elections#new', as: 'request_election'
+  match 'lodges/:lodge_id/request_election' => 'elections#new', as: 'request_election'
   
   root :to => 'elections#new'
 

@@ -3,12 +3,12 @@ class Election < ActiveRecord::Base
   belongs_to :district
   belongs_to :team
   
-  attr_accessible :ballot_one_count, :ballot_two_count, :camp_promotion, :camp_promotion_refused, :district_id, :election_refused, :held_at, :location, :no_candidates, :num_scouts_active, :num_scouts_eligible, :num_scouts_present, :unit_number, :unit_type, :coordinator_name, :coordinator_email, :coordinator_phone
+  attr_accessible :team_id, :ballot_one_count, :ballot_two_count, :camp_promotion, :camp_promotion_refused, :district_id, :election_refused, :held_at, :location, :no_candidates, :num_scouts_active, :num_scouts_eligible, :num_scouts_present, :unit_number, :unit_type, :coordinator_name, :coordinator_email, :coordinator_phone
   
   validates :unit_type, :presence => true
   validates :unit_number, :presence => true
   validates :unit_number, :uniqueness => true
-  validates :district, :presence => true
+  validates :team, :presence => true
   
   before_create :generate_token
 

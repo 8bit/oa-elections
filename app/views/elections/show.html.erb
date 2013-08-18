@@ -83,6 +83,8 @@
   <%= link_to t('.back', :default => t("helpers.links.back")),
               elections_path, :class => 'btn'  %>
   <%= link_to "Candidates List", election_candidates_path(@election), :class => 'btn'  %>
+  <%= link_to "Print Ballots", election_candidates_path(@election), :class => 'btn'  %>
+  <%= link_to "Print Forms", election_candidates_path(@election), :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_election_path(@election), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
