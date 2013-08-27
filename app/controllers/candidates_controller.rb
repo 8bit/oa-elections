@@ -5,7 +5,7 @@ class CandidatesController < ApplicationController
   before_filter :lookup_election
   
   def index
-    @candidates = Candidate.all
+    @candidates = Election.find(params[:election_id]).candidates
 
     respond_to do |format|
       format.html # index.html.erb

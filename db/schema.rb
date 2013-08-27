@@ -75,8 +75,6 @@ ActiveRecord::Schema.define(:version => 20130730040000) do
     t.string   "provider"
     t.string   "email"
     t.string   "uid"
-    t.boolean  "admin"
-    t.boolean  "active"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "team_id"

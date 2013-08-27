@@ -30,8 +30,8 @@
             <% if current_user && current_user.admin? %>
               <li><%= link_to "Teams", teams_lodge_path(['107'])  %></li>
               <li><%= link_to "Users", users_lodge_path(['107'])  %></li>
-              <li><%= link_to "Elections", elections_path  %></li>
-              <li><%= link_to "Schedule", scheduled_elections_path  %></li>
+              <li><%= link_to "Elections", '/teams/23/elections'  %></li>
+              <li><%= link_to "Schedule", '/teams/23/scheduled'  %></li>
               <% end %>
               <li><%= link_to( @election.unit + " Candidates", election_candidates_path(@election)) if @election && @election.id  %></li>
             </ul>

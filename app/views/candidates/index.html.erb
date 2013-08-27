@@ -1,7 +1,7 @@
 <%- model_class = Candidate -%>
 <div class="page-header">
   <h1><%= @election.unit %> <%=t '.title', :default => model_class.model_name.human.pluralize %>
-    <head_sub><%= @election.unit %></head_sub></h1>
+    <head_sub><%= link_to @election.unit, @election %></head_sub></h1>
 
 </div>
 <table class="table table-bordered table-striped">
@@ -37,7 +37,7 @@
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_election_candidate_path(@election, candidate), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to 'Delete',
                       election_candidate_path(@election, candidate),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
