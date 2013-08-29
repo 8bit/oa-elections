@@ -59,5 +59,19 @@ module OAElections
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_mailer.default_url_options = { host: 'oa-elections.scouting.io' }
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.mandrillapp.com',
+      port:                 587,
+      domain:               'scouting.io',
+      user_name:            ENV['MANDRILL_USERNAME'],
+      password:             ENV['MANDRILL_APIKEY'],
+      authentication:       'plain',
+      enable_starttls_auto: true  }
+
+
   end
 end
