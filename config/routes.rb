@@ -6,6 +6,7 @@ OAElections::Application.routes.draw do
       get :users
     end
   end
+
   resources :teams do
     member do
       get :elections
@@ -15,6 +16,8 @@ OAElections::Application.routes.draw do
   end
   resources :users
   
+  
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'login', to: 'sessions#new', as: 'login'
   match 'logout', to: 'sessions#destroy', as: 'logout'
@@ -29,7 +32,7 @@ OAElections::Application.routes.draw do
   match '/token/:token' => 'sessions#token', as: 'token'
   match 'lodges/:lodge_id/request_election' => 'elections#new', as: 'request_election'
   
-  root :to => 'elections#new'
+  root :to => 'team#elections'
 
 
   resources :units

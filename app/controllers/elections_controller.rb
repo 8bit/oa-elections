@@ -42,6 +42,7 @@ class ElectionsController < ApplicationController
   # GET /elections/new.json
   def new
     @election = Election.new
+    @election.held_at = Time.now
     @teams = Team.where(lodge_id: params['lodge_id'])
 
     respond_to do |format|

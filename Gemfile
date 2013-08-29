@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'json'
 gem 'omniauth-oauth2'
+gem 'cancan'
 
 group :development do
   gem 'sqlite3'
