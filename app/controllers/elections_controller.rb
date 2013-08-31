@@ -64,7 +64,7 @@ class ElectionsController < ApplicationController
     respond_to do |format|
       if @election.save
         ElectionMailer.coordinator_email(@election).deliver
-        format.html { redirect_to @election, notice: 'Election was successfully created.' }
+        format.html { redirect_to election_candidates_url(@election), notice: 'Election was successfully requested.' }
         format.json { render json: @election, status: :created, location: @election }
       else
         format.html { render action: "new" }
