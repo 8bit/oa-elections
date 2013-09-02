@@ -1,5 +1,9 @@
 class WelcomeController < ApplicationController
   def index
-    render :text => 'Hello World!', :layout => 'application'
+  	if current_user
+  		redirect_to elections_team_path(current_user.team)
+  	else
+    	render
+    end
   end
 end

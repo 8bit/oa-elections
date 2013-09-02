@@ -32,7 +32,7 @@ OAElections::Application.routes.draw do
   match '/token/:token' => 'sessions#token', as: 'token'
   match 'lodges/:lodge_id/request_election' => 'elections#new', as: 'request_election'
   
-  root :to => 'team#elections'
+  root :to => 'welcome#index'
 
 
   resources :units

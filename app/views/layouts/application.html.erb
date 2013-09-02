@@ -27,12 +27,14 @@
           <% if current_lodge %><%= link_to root_path, :class=> 'brand' do %><%= image_tag 'colonneh_totem_88px.png', :height => '20px', :width => '30px'  %> <%= current_lodge['name'] %> Lodge<% end %><% end %>
           <div class="container nav-collapse">
             <ul class="nav">
-            <% if current_user && current_user.admin? %>
-              <li><%= link_to "Teams", teams_lodge_path(['107'])  %></li>
-              <li><%= link_to "Users", users_lodge_path(['107'])  %></li>
-              <li><%= link_to "Elections", '/teams/23/elections'  %></li>
-              <li><%= link_to "Schedule", '/teams/23/scheduled'  %></li>
-              <% end %>
+            <% if current_user && current_user.team.present? && current_user.admin? %>
+              <li><%= link_to "Teams", teams_lodge_path([current_user.team.lodge_id])  %></li>
+              <li><%= link_to "Users", users_lodge_path([current_user.team.lodge_id])  %></li>
+            <% end %>
+            <% if current_user && current_user.team.present? %>
+              <li><%= link_to "Elections", elections_team_path(current_user.team)  %></li>
+              <li><%= link_to "Schedule", scheduled_team_path(current_user.team)  %></li>
+            <% end %>
               <li><%= link_to( @election.unit + " Candidates", election_candidates_path(@election)) if @election && @election.id  %></li>
             </ul>
 
