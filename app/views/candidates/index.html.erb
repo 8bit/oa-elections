@@ -12,7 +12,7 @@
   	  <th><%= "BSA ID" %></th>
 	  <th><%= "Name" %></th>
 	  <th><%= "Rank" %></th>
-	  <th><%= "DOB" %></th>
+	  <th><%= "Age" %></th>
 	  <th><%= "Phone(s)" %></th>
 	  <th><%= "Email(s)" %></th>
 	 
@@ -30,7 +30,7 @@
           <td><%= candidate.bsa_id %></td>
         <td><%= link_to candidate.display_name, election_candidate_path(@election, candidate) %></td>
         <td><%= candidate.rank %></td>
-        <td><%= time_ago_in_words(candidate.dob) + " old" %></td>
+        <td><%= content_tag :p, candidate.age, title: candidate.dob %></td>
         <td><%= number_to_phone candidate.phone_home %><br><%= number_to_phone candidate.phone_mobile %></td>		
         <td><%= mail_to candidate.email_scout %><br><%= mail_to candidate.email_parent %></td>
 

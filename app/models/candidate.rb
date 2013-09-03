@@ -11,6 +11,10 @@ class Candidate < ActiveRecord::Base
     self.last_name + ", " + ((self.nick_name.present?) ? self.nick_name : self.first_name)
   end
   
+  def age
+    dob.present? ? Date.today.year - dob.year : "Unknown"
+  end
+
   def complete?
     (first_name.present? && last_name.present?) &&
     bsa_id.present? &&
