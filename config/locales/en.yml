@@ -4,6 +4,9 @@
 en:
   hello: "Hello world"
   helpers:
+    label:
+      election:
+       held_at: "Date and Time Requested"
     titles:
       elections:
         new: "Request an election"
