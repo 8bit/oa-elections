@@ -44,6 +44,7 @@ class ElectionsController < ApplicationController
     @election = Election.new
     @election.held_at = Time.now
     @teams = Team.where(lodge_id: params['lodge_id'])
+    @election.team = Team.find_by_id(params['team'])
 
     respond_to do |format|
       format.html # new.html.erb
