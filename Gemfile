@@ -9,7 +9,7 @@ gem 'json'
 gem 'omniauth-oauth2'
 gem 'prawn'
 gem 'cancan'
-gem 'kekeewin', path: '~/Code/Gems/kekeewin'
+
 
 group :development do
   gem 'sqlite3'
@@ -17,6 +17,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
+  gem 'kekeewin', path: '~/Code/Gems/kekeewin'
 end
 
 group :production do
