@@ -7,7 +7,9 @@ gem 'rails', '3.2.13'
 
 gem 'json'
 gem 'omniauth-oauth2'
+gem 'prawn'
 gem 'cancan'
+gem 'kekeewin', path: '~/Code/Gems/kekeewin'
 
 group :development do
   gem 'sqlite3'

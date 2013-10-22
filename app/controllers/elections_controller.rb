@@ -4,7 +4,7 @@ class ElectionsController < ApplicationController
   def index
     @elections = Election.all
     @unit = Unit.find(1)
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @elections }
@@ -34,6 +34,12 @@ class ElectionsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @election }
+      format.pdf do
+        pdf = BallotPdf.new(@election)
+        send_data pdf.render, filename: "election_#{@election.unit_number}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
     end
   end
   end
