@@ -35,8 +35,8 @@ class ElectionsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @election }
       format.pdf do
-        pdf = BallotPdf.new(@election)
-        send_data pdf.render, filename: "election_#{@election.unit_number}.pdf",
+        pdf = ReportPdf.new(@election)
+        send_data pdf.render, filename: "election_report_#{@election.unit_number}.pdf",
                               type: "application/pdf",
                               disposition: "inline"
       end

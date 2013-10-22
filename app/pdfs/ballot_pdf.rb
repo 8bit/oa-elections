@@ -34,21 +34,6 @@ class BallotPdf < Prawn::Document
         end
       end
     end
-    # grid(0,1).bounding_box do
-    #   candidate_names
-    # end
-    # grid(1,0).bounding_box do
-    #   candidate_names
-    # end
-    # grid(1,1).bounding_box do
-    #   candidate_names
-    # end
-    # grid(2,0).bounding_box do
-    #   candidate_names
-    # end
-    # grid(2,1).bounding_box do
-    #   candidate_names
-    # end
 
   end
   

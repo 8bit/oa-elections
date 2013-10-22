@@ -5,11 +5,18 @@ class CandidatesController < ApplicationController
   before_filter :lookup_election
   
   def index
-    @candidates = Election.find(params[:election_id]).candidates
+    @election = Election.find(params[:election_id])
+    @candidates = @election.candidates
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @candidates }
+      format.pdf do
+        pdf = BallotPdf.new(@election)
+        send_data pdf.render, filename: "election_ballots_#{@election.unit_number}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
     end
   end
 
