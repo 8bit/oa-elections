@@ -1,6 +1,6 @@
 class BallotPdf < Prawn::Document
   def initialize(election)
-    super(top_margin: 70)
+    super(top_margin: 30)
 
     @election = election
 
@@ -13,14 +13,24 @@ class BallotPdf < Prawn::Document
       @rows = 1
     end
 
-    define_grid(:columns => 2, :rows => @rows, :gutter => 10)
+    define_grid(:columns => 2, :rows => @rows, padding: 10)
 
     grid.columns.times do |column|
       grid.rows.times do |row|
         grid(row, column).bounding_box do
-          header
-          candidate_names
-          footer
+          dash(2)
+          stroke do
+            line(bounds.top_right, bounds.bottom_right)
+          end if column == 0
+          stroke do
+            line(bounds.bottom_left, bounds.bottom_right)
+          end if row != grid.rows - 1
+          undash
+          indent 10 do
+            header
+            candidate_names
+            footer
+          end
         end
       end
     end
@@ -43,6 +53,7 @@ class BallotPdf < Prawn::Document
   end
   
   def header
+    move_down 10
     text "Ballot for #{@election.unit} OA Election", size: 12, style: :bold
   end
 
