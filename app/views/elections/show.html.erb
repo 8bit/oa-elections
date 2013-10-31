@@ -23,6 +23,8 @@
     <td><%= @election.held_at.to_formatted_s(:event) %> <% if @election.held_at.future? && (@election.held_at.to_date - Date.today).to_i < 10 %><span class="badge badge-important"><%= (@election.held_at.to_date - Date.today).to_i %> days away</span><% end %> </td></tr>
     <tr><td><strong><%= model_class.human_attribute_name(:location) %>:</strong></a></td>
     <td><a href="http://maps.google.com?q=<%= @election.location %>" target="_blank"><%= @election.location %></a></td></tr>
+    <tr><td><strong>Coordinator:</strong></a></td>
+    <td><%= @election.coordinator_name %> (<%= mail_to @election.coordinator_email, @election.coordinator_email %>) (<%= link_to number_to_phone(@election.coordinator_phone), "tel:#{@election.coordinator_phone}" %>)</a></td></tr>
     </table>
     <% else %>
     <table class="table table-striped table-bordered">
@@ -32,6 +34,7 @@
      <td width="90"><i class="icon-<%= (@election.election_refused?) ? "check" : "check-empty" %>" style="font-size: 1.2em; color: <%= (@election.election_refused?) ? "red" : "gray" %>"></td>
      <td><strong><%= model_class.human_attribute_name(:election_refused) %></strong></td>
     </tr>
+
     </table>
     <% end %>
 </div>
